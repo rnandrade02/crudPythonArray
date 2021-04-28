@@ -4,10 +4,11 @@ valorProduto = []
 qtdEstoque = []
 descProduto = []
 
+
 def cadastroProdutos():
     continuar = "S"
     while continuar == "S":
-        cod = len(codProduto) +1
+        cod = len(codProduto) + 1
         codProduto.append(cod)
         print("Código do produto", len(codProduto))
         nomeProduto.append(input("Nome do produto:").upper())
@@ -19,8 +20,26 @@ def cadastroProdutos():
 
 def deletarProduto():
     buscar = input("Qual produto deseja buscar para deletar?").upper()
-    for indice in range(0,len(nomeProduto)):
+    for indice in range(0, len(nomeProduto)):
         if buscar == nomeProduto[indice]:
-            print("entrou na condicao")
+            print("Código: ", codProduto[indice], "\nNome:", nomeProduto[indice], "\nR$:", valorProduto[indice],
+                  "\nEstoque:",qtdEstoque[indice],"\nDescrição:", descProduto[indice])
+
+            deletar = input("Digite \"S\" para deletar ou \"N\" para sair: ").upper()
+            if deletar == 'S':
+                del codProduto[indice]
+                del valorProduto[indice]
+                del qtdEstoque[indice]
+                del descProduto[indice]
+                del nomeProduto[indice]
+                print("Produto Deletado")
         else:
             print("produto não encontrado")
+
+
+def procurarProduto():
+    buscar = input("Qual produto deseja buscar: ").upper()
+    for indice in range(0, len(codProduto)):
+        if buscar == nomeProduto[indice]:
+            print("Código: ", codProduto[indice], "\nNome:", nomeProduto[indice], "\nR$:", valorProduto[indice],
+                  "\nEstoque:",qtdEstoque[indice],"\nDescrição:", descProduto[indice])

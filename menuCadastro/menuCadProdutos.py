@@ -17,7 +17,7 @@ while saidamenu == False:
     elif menu == 3:
         print("Menu")
     elif menu == 4:
-        print("Menu")
+        procurarProduto()
     elif menu == 5:
         print("Menu")
     elif menu == 6:
